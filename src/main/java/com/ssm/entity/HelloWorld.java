@@ -5,41 +5,64 @@ import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import java.util.Date;
+import java.util.*;
 
 public class HelloWorld implements InitializingBean, DisposableBean {
 
 	private String msg;
-
 	private Date date;
+	private List<String> list;
+	private Set<String> set;
+	private Map<String, String> map;
+	private Properties properties;
+	public HelloWorld() {
+	}
+
+	public HelloWorld(Date date) {
+		this.date = date;
+	}
+
+//	public HelloWorld(String msg, Date date) {
+//		this.msg = msg;
+//		this.date = date;
+//	}
 
 	@PostConstruct
 	public void init() {
 		System.out.println(1);
-		this.msg = "HelloWorld1";
-		this.date = new Date();
+//		this.msg = "HelloWorld1";
+//		this.date = new Date();
 	}
 
 	public void init2() {
 		System.out.println(2);
-		this.msg = "HelloWorld2";
-		this.date = new Date();
+//		this.msg = "HelloWorld2";
+//		this.date = new Date();
 	}
 
 	@Override
 	public void afterPropertiesSet() {
 		System.out.println(3);
-		this.msg = "HelloWorld3";
-		this.date = new Date();
+//		this.msg = "HelloWorld3";
+//		this.date = new Date();
 	}
-	//		this.msg = msg;
-	//	public HelloWorld(String msg) {
-	//
-	//	}
-	//
-//	public HelloWorld() {
 
-//	}
+	@Override
+	public void destroy() throws Exception {
+//		this.msg = "";
+//		this.date = null;
+//		System.out.println("销毁msg:" + this.msg + "和date:" + this.date);
+		System.out.println("a");
+	}
+
+	public void cleanup() {
+		System.out.println("b");
+	}
+
+	@PreDestroy
+	public void close() {
+		System.out.println("c");
+	}
 
 	@Override
 	public String toString() {
@@ -65,20 +88,35 @@ public class HelloWorld implements InitializingBean, DisposableBean {
 		this.date = date;
 	}
 
-	@Override
-	public void destroy() throws Exception {
-//		this.msg = "";
-//		this.date = null;
-//		System.out.println("销毁msg:" + this.msg + "和date:" + this.date);
-		System.out.println("a");
+	public List<String> getList() {
+		return list;
 	}
 
-	@PreDestroy
-	public void close() {
-		System.out.println("b");
+	public void setList(List<String> list) {
+		this.list = list;
 	}
 
-	public void cleanup() {
-		System.out.println("c");
+	public Set<String> getSet() {
+		return set;
+	}
+
+	public void setSet(Set<String> set) {
+		this.set = set;
+	}
+
+	public Map<String, String> getMap() {
+		return map;
+	}
+
+	public void setMap(Map<String, String> map) {
+		this.map = map;
+	}
+
+	public Properties getProperties() {
+		return properties;
+	}
+
+	public void setProperties(Properties properties) {
+		this.properties = properties;
 	}
 }

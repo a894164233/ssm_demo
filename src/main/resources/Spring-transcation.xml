@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  ~ Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="user" class="com.ssm.entity.User">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="helloDao" class="com.ssm.entity.HelloDao">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="platformTransactionManager" ref="transactionManager"/>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/test1"/>
+		<property name="username" value="root"/>
+		<property name="password" value="123456"/>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<!--auto proxy-->
+	<!--<bean id="autoProxy" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>-->
+	<!--exception proxy-->
+	<!--<bean id="exceptionHandler" class="com.ssm.action.ExceptionHandler"/>-->
+	<!--<bean id="exceptionHandlerAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">-->
+		<!--<property name="advice" ref="exceptionHandler"/>-->
+		<!--<property name="patterns" value=".*.*"/>-->
+	<!--</bean>-->
+	<!--&lt;!&ndash;run time proxy&ndash;&gt;-->
+	<!--<bean id="timeHandler" class="com.ssm.action.TimeHandler"/>-->
+	<!--<bean id="timeHandlerAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">-->
+		<!--<property name="advice" ref="timeHandler"/>-->
+		<!--<property name="patterns" value=".*.*"/>-->
+	<!--</bean>-->
+
+
+</beans>

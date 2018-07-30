@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  ~ Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="logic1" class="com.ssm.action.Logic1"/>
+	<bean id="logic2" class="com.ssm.action.Logic2"/>
+	<!--auto proxy-->
+	<!--<bean id="autoProxy" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>-->
+	<!--exception proxy-->
+	<bean id="exceptionHandler" class="com.ssm.action.ExceptionHandler"/>
+	<bean id="exceptionHandlerAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="advice">
+			<ref bean="exceptionHandler"/>
+		</property>
+		<property name="patterns">
+			<value>.*.*</value>
+		</property>
+	</bean>
+	<!--run time proxy-->
+	<bean id="timeHandler" class="com.ssm.action.TimeHandler"/>
+	<bean id="timeHandlerAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="advice">
+			<ref bean="timeHandler"/>
+		</property>
+		<property name="patterns">
+			<value>.*.*</value>
+		</property>
+	</bean>
+	<bean id="logic1Proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.ssm.impl.LogicInterface</value>
+			</list>
+		</property>
+		<property name="target">
+			<ref bean="logic1"/>
+		</property>
+		<property name="interceptorNames">
+			<value>timeHandler</value>
+		</property>
+	</bean>
+	<bean id="logic2Proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyTargetClass">
+			<value>true</value>
+		</property>
+		<property name="target">
+			<ref bean="logic2"/>
+		</property>
+		<property name="interceptorNames">
+			<value>exceptionHandler</value>
+		</property>
+	</bean>
+
+</beans>

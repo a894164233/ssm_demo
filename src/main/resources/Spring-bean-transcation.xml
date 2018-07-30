@@ -1,23 +1,23 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--
-  ~ Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
-  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
-  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
-  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
-  -->
+<!--<?xml version='1.0' encoding='UTF-8'?>-->
+<!--&lt;!&ndash;-->
+  <!--~ Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+  <!--~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.-->
+  <!--~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.-->
+  <!--~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.-->
+  <!--~ Vestibulum commodo. Ut rhoncus gravida arcu.-->
+  <!--&ndash;&gt;-->
 
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
 
-    <bean id="HelloWorld" class="com.ssm.entity.HelloWorld" init-method="init2" destroy-method="cleanup">
-        <!--<constructor-arg name="msg" value="HelloWorld1" />-->
-        <!--<property name="msg" value="HelloWorld2" />-->
-        <!--<property name="date" ref="date" />-->
-    </bean>
+    <!--<bean id="HelloWorld" class="com.ssm.entity.HelloWorld" autowire="byName">-->
+        <!--&lt;!&ndash;<constructor-arg name="msg" value="HelloWorld1" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="msg" value="HelloWorld2" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="date" ref="date" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="date" >&ndash;&gt;-->
+            <!--&lt;!&ndash;<ref bean="date"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;</property>&ndash;&gt;-->
+    <!--</bean>-->
 
-</beans>
+<!--</beans>-->
