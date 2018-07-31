@@ -16,9 +16,6 @@ public class TestHelloDao {
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/Spring-helloDao.xml");
 		HelloDao helloDao = (HelloDao) applicationContext.getBean("helloDaoProxy");
-//		helloDao.create1("test");
-//		helloDao.create2("test");
-//		helloDao.create4("test");
 		helloDao.queryAll();
 	}
 }

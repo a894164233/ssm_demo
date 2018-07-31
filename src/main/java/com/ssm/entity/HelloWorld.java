@@ -7,6 +7,9 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.*;
 
+/**
+ * @author newtranx_011
+ */
 public class HelloWorld implements InitializingBean, DisposableBean {
 
 	private String msg;
@@ -51,7 +54,6 @@ public class HelloWorld implements InitializingBean, DisposableBean {
 	public void destroy() throws Exception {
 //		this.msg = "";
 //		this.date = null;
-//		System.out.println("销毁msg:" + this.msg + "和date:" + this.date);
 		System.out.println("a");
 	}
 

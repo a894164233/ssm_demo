@@ -40,4 +40,8 @@
 		<servlet-name>springMVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<listener>
+		<listener-class>com.ssm.service.BindLoader</listener-class>
+	</listener>
 </web-app>

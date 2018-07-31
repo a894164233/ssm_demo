@@ -12,6 +12,9 @@ import org.springframework.aop.ThrowsAdvice;
 
 import java.lang.reflect.Method;
 
+/**
+ * @author newtranx_011
+ */
 public class ExceptionHandler implements ThrowsAdvice {
 
 	public void afterThrowing(Method method, Object[] args, Object target, Throwable throwable) {

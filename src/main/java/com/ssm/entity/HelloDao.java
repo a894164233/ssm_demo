@@ -24,6 +24,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author newtranx_011
+ */
 public class HelloDao {
 	private DataSource dataSource;
 	private PlatformTransactionManager platformTransactionManager;
@@ -111,7 +114,6 @@ public class HelloDao {
 //			Object result1 = null;
 //			return result1;
 //		});
-//		return result;
 		return null;
 	}
 }

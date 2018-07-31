@@ -12,6 +12,9 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+/**
+ * @author newtranx_011
+ */
 public class Log implements ApplicationContextAware {
 	private ApplicationContext applicationContext;
 	@Override

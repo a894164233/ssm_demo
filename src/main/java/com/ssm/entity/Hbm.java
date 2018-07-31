@@ -17,6 +17,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * @author newtranx_011
+ */
 public class Hbm {
 	private Integer id;
 	private String name;

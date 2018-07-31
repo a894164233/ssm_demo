@@ -8,12 +8,14 @@
 
 package com.ssm.test;
 
-import com.ssm.action.Logic1;
 import com.ssm.action.Logic2;
 import com.ssm.impl.LogicInterface;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author newtranx_011
+ */
 public class TestLogic {
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/Spring-logic.xml");

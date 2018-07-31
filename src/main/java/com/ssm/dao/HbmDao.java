@@ -13,6 +13,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.transaction.PlatformTransactionManager;
 
+/**
+ * @author newtranx_011
+ */
 public class HbmDao {
 
 	private SessionFactory sessionFactory;
@@ -33,4 +36,5 @@ public class HbmDao {
 		hbm.setMsg("hbm5");
 		hibernateTemplate.saveOrUpdate(hbm);
 	}
+
 }

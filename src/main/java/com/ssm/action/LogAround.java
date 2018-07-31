@@ -11,6 +11,9 @@ package com.ssm.action;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
+/**
+ * @author newtranx_011
+ */
 public class LogAround implements MethodInterceptor {
 
 	@Override

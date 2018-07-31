@@ -8,6 +8,9 @@
 
 package com.ssm.test;
 
+/**
+ * @author newtranx_011
+ */
 public class JavaProxyTest {
 
 }

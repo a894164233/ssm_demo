@@ -13,19 +13,43 @@
 		<property name="viewPage" value="test"/>
 	</bean>
 
+	<bean id="testExceptionController" class="com.ssm.controller.TestExceptionController">
+		<property name="helloWorld" value="test value 1"/>
+		<property name="viewPage" value="outException"/>
+	</bean>
+
+	<bean id="testInterceptor" class="com.ssm.aop.TestInterceptor"/>
+
 	<!--自定义bean-->
 	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="testInterceptor"/>
+			</list>
+		</property>
 		<property name="mappings">
 			<props>
-				<prop key="test.do">helloWorldAction</prop>
+				<prop key="test">helloWorldAction</prop>
+				<prop key="outException">testExceptionController</prop>
 			</props>
 		</property>
 	</bean>
+
+	<!--<bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">-->
+		<!--<property name="basename" value="views"/>-->
+	<!--</bean>-->
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 		<property name="prefix" value="/WEB-INF/page/"/>
 		<property name="suffix" value=".jsp"/>
+	</bean>
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">outException</prop>
+			</props>
+		</property>
 	</bean>
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="1024000"/>

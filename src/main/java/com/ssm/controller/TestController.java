@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Objects;
 
+/**
+ * @author newtranx_011
+ */
 @RestController
 public class TestController {
 
@@ -15,7 +18,6 @@ public class TestController {
 
 	@PostMapping
 	public String getHelloWorld() {
-		if (Objects.isNull(helloWorld)) ;
 		System.out.println(helloWorld.getMsg());
 		return helloWorld.getMsg();
 	}
