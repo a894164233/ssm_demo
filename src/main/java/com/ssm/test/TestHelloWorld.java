@@ -88,7 +88,7 @@ public class TestHelloWorld {
      */
     public static void test40() throws FileNotFoundException {
         ApplicationContext applicationContext= new ClassPathXmlApplicationContext("classpath:/Spring-mvc.xml");
-        HelloWorld helloWorld = (HelloWorld) applicationContext.getBean("HelloWorld");
-        System.out.println(helloWorld.getMsg() + helloWorld.getDate());
+//        HelloWorld helloWorld = (HelloWorld) applicationContext.getBean("HelloWorld", String.class);
+//        System.out.println(helloWorld.getMsg() + helloWorld.getDate());
     }
 }
